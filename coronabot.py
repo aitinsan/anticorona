@@ -41,5 +41,8 @@ def fifth_question(message):
 #5
 @bot.message_handler(func=lambda message: message.text == "Проверочный тест на корона вирус")
 def seventh_question(message):
-    bot.send_message(message.chat.id,'Здесь нужно как нибудь реализовать тест')
+    markup = types.InlineKeyboardMarkup()
+    btn_my_site= types.InlineKeyboardButton(text='Быстрый тест', url='http://u7018851.beget.tech/insan/index.html')
+    markup.add(btn_my_site)
+    bot.send_message(message.chat.id, "Тест", reply_markup = markup))
 bot.polling()
